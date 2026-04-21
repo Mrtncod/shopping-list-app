@@ -1,13 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.App {
+  background-color: rgba(234, 235, 235, 0.938);
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 1rem;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(67, 72, 75, 0.938);
+  color: white;
+  font-size: 26px;
+  padding-bottom: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  font-size: 20px;
+  border-radius: 2rem;
+}
+
+.div-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 25px;
+}
+
+.form input,
+.form select {
+  border: 1px solid rgba(126, 126, 126, 0.938);
+
+  color: #383838;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  font-family: inherit;
+
+  border-radius: 2rem;
+  padding: 1.2rem 3.2rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.form label {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.btn-add {
+  color: rgb(51, 51, 51);
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: #cacaca;
+  border: none;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.shop-list {
+  background-color: rgba(67, 72, 75, 0.938);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop-list ul {
+  color: black;
+  padding-top: 2rem;
+  list-style: none;
+
+  max-height: 40vh;
+  overflow-y: auto;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 1.2rem;
+  justify-content: center;
+  align-content: start;
+}
+
+.shop-list li {
+  display: flex;
+  align-items: center;
+
+  gap: 1.2rem;
+  font-size: 2.8rem;
+}
+
+.shop-items {
+  border-radius: 1.2rem;
+  padding: 1.2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+
+  flex-wrap: nowrap;
+}
+.shop-items span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+.shop-items button {
+  color: red;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 0.1rem;
+}
+.shop-items button:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  accent-color: #1fe561;
+}
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.controls select,
+.controls button {
+  background-color: #e2e2e2;
+  color: #383838;
+  border: none;
+
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.footer {
+  font-size: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  padding: 1rem;
+  gap: 3rem;
+}
+.footer span {
+  box-shadow:
+    rgba(198, 198, 253, 0.25) 0px 30px 60px -12px inset,
+    rgba(128, 126, 126, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 2.4rem;
+}
+.footer h3 {
+  font-size: 3.2rem;
+  padding: 0.3rem;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  background-color: #495057;
+  color: rgb(253, 253, 253);
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .div-inputs {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  input,
+  select,
+  button {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+  }
+}
+/* 
+@media (min-width: 600px) {
+  .shop-list ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+
+@media (min-width: 900px) {
+  .shop-list ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
