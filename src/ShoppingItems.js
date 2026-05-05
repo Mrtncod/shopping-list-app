@@ -16,7 +16,7 @@ export default function ShoppingItems({
           product.bought
             ? {
                 textDecoration: "line-through",
-                color: "#1fe561",
+                color: "#14933e",
               }
             : {}
         }

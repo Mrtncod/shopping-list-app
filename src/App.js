@@ -3,6 +3,7 @@ import Header from "./Header";
 import Form from "./Form";
 import ShoppingList from "./ShoppingList";
 import Footer from "./Footer";
+import img from "./img/img.jpg";
 
 export default function App() {
   const [products, setProducts] = useState(() => {

@@ -6,12 +6,12 @@ export default function Footer({ products }) {
   return (
     <div className="footer">
       {allBought ? (
-        <h3>🛒 Shopping done 🎉</h3>
+        <h3> All items are added in your cart </h3>
       ) : (
         <>
-          <span>All items: {total}</span>
-          <span>Bought items: {bought}</span>
-          <span>Remaining items: {remaining}</span>
+          <span>All: {total}</span>
+          <span>Added: {bought}</span>
+          <span>Remaining: {remaining}</span>
         </>
       )}
     </div>

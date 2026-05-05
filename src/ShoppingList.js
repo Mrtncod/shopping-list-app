@@ -25,7 +25,7 @@ export default function ShoppingList({
       <div className="controls">
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">Sort by All</option>
-          <option value="bought">Sort by Bought</option>
+          <option value="bought">Sort by Added</option>
           <option value="unbought">Sort by Remaining</option>
         </select>
         <button onClick={() => onClearProducts()}>Clear list</button>
